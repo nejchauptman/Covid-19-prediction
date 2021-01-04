@@ -1,6 +1,7 @@
 import scrapy
 import json
 
+
 class Covid19Spider(scrapy.Spider):
     name = 'covid19'
     allowed_domains = ['covid-19.sledilnik.org']
@@ -10,7 +11,7 @@ class Covid19Spider(scrapy.Spider):
         params = {}
         resp = json.loads(response.body)
         for i in resp:
-            if((i['year'] == 2020)):
+            if((i['year'] == 2020) and (i['dayFromStart'] >= 1)):
                 params['year'] = i['year']
                 params['dayFromStart'] = i['dayFromStart']
                 params['year'] = i['year']
@@ -79,4 +80,4 @@ class Covid19Spider(scrapy.Spider):
                             'femaleToDate')
                         params['age 85+ MEN'] = j.get('maleToDate')
 
-            yield params
+                yield params
