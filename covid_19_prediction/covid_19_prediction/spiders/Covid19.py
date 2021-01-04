@@ -1,7 +1,5 @@
 import scrapy
 import json
-from pprint import pprint
-
 
 class Covid19Spider(scrapy.Spider):
     name = 'covid19'
