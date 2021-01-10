@@ -1,6 +1,6 @@
 # Covid-19-prediction
 
-[Data is scraped from covid-19.sledilnik.org](https://covid-19.sledilnik.org/sl/stats)
+[Data is scraped from covid-19.sledilnik.org](https://covid-19.sledilnik.org/sl/stats). Project predicts how many new positive covid patients will appear based on "tested positive to date" data with linear regresion. 
 
 # Technologies
 
