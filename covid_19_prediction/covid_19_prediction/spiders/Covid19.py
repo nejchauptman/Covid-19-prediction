@@ -11,7 +11,7 @@ class Covid19Spider(scrapy.Spider):
         params = {}
         resp = json.loads(response.body)
         for i in resp:
-            if((i['year'] == 2020) and (i['dayFromStart'] >= 1)):
+            if((i['dayFromStart'] <= 311) and (i['dayFromStart'] >= 1)):
                 params['year'] = i['year']
                 params['dayFromStart'] = i['dayFromStart']
                 params['year'] = i['year']
