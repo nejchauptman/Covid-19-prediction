@@ -11,7 +11,7 @@ class Covid19Spider(scrapy.Spider):
         params = {}
         resp = json.loads(response.body)
         for i in resp:
-            if((i['dayFromStart'] <= 311) and (i['dayFromStart'] >= 1)):
+            if((i['dayFromStart'] <= 314) and (i['dayFromStart'] >= 1)):
                 params['year'] = i['year']
                 params['dayFromStart'] = i['dayFromStart']
                 params['year'] = i['year']
@@ -29,6 +29,13 @@ class Covid19Spider(scrapy.Spider):
                 params['za regija'] = i['statePerRegion']['za']
                 params['ng regija'] = i['statePerRegion']['ng']
                 params['kp regija'] = i['statePerRegion']['kp']
+                if (i['dayFromStart']>=7):
+                    params['inHospitalToday'] = i['statePerTreatment']['inHospital']
+                    params['inHospitalToDate'] = i['statePerTreatment']['inHospitalToDate']
+                    params['deceasedToDate'] = i['statePerTreatment']['deceasedToDate']
+                    params['deceasedToday'] = i['statePerTreatment']['deceased']
+                    params['critical'] = i['statePerTreatment']['critical']
+                    params['inICU'] = i['statePerTreatment']['inICU']
                 for l, k in i['tests']['positive'].items():
                     if(l == 'toDate'):
                         params['tested_poz_to_date'] = k

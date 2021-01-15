@@ -1,6 +1,6 @@
-# Covid-19-prediction
+## Covid-19-prediction
 
-[Data is scraped from covid-19.sledilnik.org](https://covid-19.sledilnik.org/sl/stats). Project predicts how many new positive covid patients will appear based on "tested positive to date" data with linear regresion. 
+[Data is scraped from covid-19.sledilnik.org](https://covid-19.sledilnik.org/sl/stats). Project predicts the end of epidemic based on information and calculation developed with linear regresion.
 
 # Technologies
 
@@ -13,4 +13,5 @@
 - Download or clone this project
 - Open Visual Studio Code and integrated terminal
 - type "cd covid_19_prediction" for switching the directory
-- Enter "scrapy crawl covid19 -o covid19.csv" for activating the scrapy crawlers
+- Enter "scrapy crawl covid19 -o data/covid19.csv" for activating the scrapy crawlers
+- Run the notebook
